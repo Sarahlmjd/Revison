@@ -39,6 +39,8 @@ function Login() {
   async function submit(e) {
     e.preventDefault(); setBusy(true); setMsg("");
     if (mode === "signup") {
+      const owner = (process.env.NEXT_PUBLIC_SEED_EMAIL || "").trim().toLowerCase();
+      if (owner && email.trim().toLowerCase() !== owner) { setBusy(false); return setMsg("Les inscriptions sont fermées : cette appli est privée."); }
       const { data, error } = await supabase.auth.signUp({ email: email.trim(), password: pwd, options: { emailRedirectTo: window.location.origin } });
       setBusy(false);
       if (error) return setMsg(traduire(error.message));
@@ -74,6 +76,7 @@ function traduire(m) {
   if (/Invalid login credentials/i.test(m)) return "E-mail ou mot de passe incorrect.";
   if (/Email not confirmed/i.test(m)) return "Confirme d'abord ton compte avec le lien reçu par e-mail.";
   if (/already registered/i.test(m)) return "Ce compte existe déjà : connecte-toi.";
+  if (/Inscriptions fermées|Database error saving new user/i.test(m)) return "Les inscriptions sont fermées : cette appli est privée.";
   if (/at least 6/i.test(m)) return "Le mot de passe doit faire au moins 6 caractères.";
   return m;
 }
