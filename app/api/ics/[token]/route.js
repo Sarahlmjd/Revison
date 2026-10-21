@@ -46,7 +46,7 @@ export async function GET(_req, { params }) {
     const subjW = (id) => W.subjects.find((s) => s.id === id);
     const chapW = (id) => W.chapters.find((c) => c.id === id);
     for (const { x, a, w } of dayLayout(W, d)) {
-      if (x.status === "skipped") continue;
+      if (x.status === "skipped" || x.status === "off") continue;
       const s = subjW(x.subjId), c = x.chapId && chapW(x.chapId);
       if (!s) continue;
       const kind = x.kind && KINDS[x.kind] ? KINDS[x.kind] : "";
