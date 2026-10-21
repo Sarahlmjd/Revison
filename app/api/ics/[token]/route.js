@@ -54,7 +54,9 @@ export async function GET(_req, { params }) {
       const title = `${done}📖 ${s.name}${c ? " · " + c.name : ""}${firm ? "" : " (prévu)"}`;
       const desc = [kind && kind[0].toUpperCase() + kind.slice(1), c ? "Étape actuelle : " + CST[c.status].t : "", `${workOf(x.mins)} min de travail puis pause.`, firm ? "" : "Prévision : peut encore changer selon ce que tu coches."].filter(Boolean).join("\n");
       lines.push("BEGIN:VEVENT", `UID:${date}-${x.id}@plan-revision`, `DTSTAMP:${stamp}`, `DTSTART:${icsTime(date, a)}`, `DTEND:${icsTime(date, w)}`,
-        fold("SUMMARY:" + esc(title)), fold("DESCRIPTION:" + esc(desc)), "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc(s.name), "TRIGGER:PT0M", "END:VALARM", "END:VEVENT");
+        fold("SUMMARY:" + esc(title)), fold("DESCRIPTION:" + esc(desc)), "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc("C'est parti : " + s.name), "TRIGGER:PT0M", "END:VALARM",
+        // fin du travail : sur iPhone le minuteur de l'appli s'arrête quand l'écran est verrouillé, le calendrier prend le relais
+        "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc(`Fin de la quête ${s.name} : défi feuille blanche puis pause`), "TRIGGER;RELATED=END:PT0M", "END:VALARM", "END:VEVENT");
     }
   };
 
