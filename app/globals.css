@@ -551,3 +551,42 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 /* ===== finitions ===== */
 .quest-sub .btn{color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:11px 0}
 .mlabel b{-webkit-line-clamp:3}
+
+/* ===== Boss des partiels ===== */
+.boss{display:flex;flex-direction:column;gap:6px;width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:20px;padding:12px 14px;color:var(--ink)}
+.boss-t{display:flex;justify-content:space-between;gap:8px;font-size:.78rem}
+.boss-t b{font-family:var(--f-display);font-weight:800;letter-spacing:.04em}
+.boss-t span{color:var(--rose);font-weight:700}
+.boss-bar{height:10px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.boss-bar i{display:block;height:100%;border-radius:99px;background:var(--rose);transition:width .6s ease}
+.boss-s{display:flex;justify-content:space-between;gap:8px;font-size:.72rem;color:var(--muted)}
+.boss.compact{padding:10px 12px}
+.boss.compact .boss-s span:last-child{display:none}
+.pace{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:12px 14px;font-size:.88rem;margin:0}
+.pace.hot{border-color:var(--rose-c)}
+.pace b{color:var(--cream)}
+
+/* ===== Succès ===== */
+.achs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ach{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:10px 12px;display:grid;grid-template-columns:30px 1fr;column-gap:8px;align-items:center;opacity:.55}
+.ach .ach-i{grid-row:span 2;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:var(--sunk);color:var(--muted)}
+.ach b{font-size:.82rem;line-height:1.2}
+.ach small{font-size:.68rem;color:var(--muted);line-height:1.2}
+.ach.on{opacity:1;border-color:#4A3F5E}
+.ach.on .ach-i{background:var(--lav);color:#141012;box-shadow:2px 2px 0 var(--lav-d)}
+
+/* ===== Célébration (succès, niveau, journée parfaite) ===== */
+#celeb{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translate(-50%,-140%);z-index:60;width:min(92vw,420px);box-sizing:border-box;
+  display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--lav);border-radius:22px 22px 22px 6px;padding:12px 14px;box-shadow:5px 5px 0 #3B3450;transition:transform .35s cubic-bezier(.2,.9,.3,1.2)}
+#celeb.show{transform:translate(-50%,0)}
+#celeb .celeb-badge{flex:none;width:46px;height:46px;border-radius:14px;background:var(--lav);color:#141012;display:grid;place-items:center;box-shadow:3px 3px 0 var(--lav-d)}
+#celeb.show .celeb-badge{animation:pop .5s .15s ease-out}
+@keyframes pop{0%{transform:scale(.6) rotate(-12deg)}70%{transform:scale(1.12) rotate(4deg)}100%{transform:none}}
+#celeb small{display:block;font-size:.66rem;font-weight:700;letter-spacing:.14em;color:var(--lav)}
+#celeb b{display:block;font-family:var(--f-display);font-weight:800;font-size:1rem}
+#celeb span{display:block;font-size:.8rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){#celeb,#celeb .celeb-badge{transition:none;animation:none}}
+
+/* fiche chapitre : ordre */
+.order{display:flex;flex-direction:column;gap:6px}
+.btn:disabled{opacity:.4}

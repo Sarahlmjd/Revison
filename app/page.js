@@ -53,15 +53,16 @@ function Login() {
   }
 
   return (
-    <div className="wrap" style={{ paddingTop: 40, maxWidth: 440 }}>
+    <div className="wrap login" style={{ paddingTop: 40, maxWidth: 440 }}>
+      <p className="kicker">L2 PSYCHO · SEMESTRE 3</p>
+      <h1 className="mega">RÉVI<span>S</span>IONS</h1>
       <section className="panel">
-        <h1>Mon plan de révision</h1>
         <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <label htmlFor="email" className="muted">E-mail</label>
           <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="prenom@exemple.fr" />
           <label htmlFor="pwd" className="muted">Mot de passe {mode === "signup" ? "(6 caractères minimum)" : ""}</label>
           <input id="pwd" type="password" required minLength={6} autoComplete={mode === "signup" ? "new-password" : "current-password"} value={pwd} onChange={(e) => setPwd(e.target.value)} />
-          <button className="btn primary" disabled={busy}>{busy ? "Un instant…" : mode === "signup" ? "Créer mon compte" : "Me connecter"}</button>
+          <button className="btn primary big" disabled={busy}>{busy ? "UN INSTANT…" : mode === "signup" ? "CRÉER MON COMPTE" : "JOUER"}</button>
           <button type="button" className="btn ghost" onClick={() => { setMode(mode === "signup" ? "login" : "signup"); setMsg(""); }}>
             {mode === "signup" ? "J'ai déjà un compte" : "Première fois ? Créer mon compte"}
           </button>
@@ -92,7 +93,7 @@ function AppShell({ user }) {
       try {
         const row = await loadOrCreatePlan(user, seed);
         const icsUrl = `${window.location.origin}/api/ics/${row.ics_token}`;
-        startApp({ initial: row.state, store: makeStore(user), icsUrl, onSignOut: () => supabase.auth.signOut().then(() => location.reload()) });
+        startApp({ initial: row.state, initialAt: row.updated_at, store: makeStore(user), icsUrl, onSignOut: () => supabase.auth.signOut().then(() => location.reload()) });
       } catch (e) {
         setError(e.message || String(e));
       }
