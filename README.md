@@ -12,13 +12,7 @@ Compte 20 minutes la première fois. De préférence sur un ordinateur.
 1. Crée un compte sur **supabase.com**, puis **New project** (choisis la région *Europe*, garde le mot de passe quelque part).
 2. Dans le projet : **SQL Editor › New query**, colle tout le contenu de `supabase/schema.sql`, clique **Run**.
 3. **Authentication › Sign In / Providers › Email** : laisse *Email* activé.
-4. **Authentication › Emails › Magic Link** : remplace le texte du modèle par :
-   ```
-   <h2>Ton code de connexion</h2>
-   <p>{{ .Token }}</p>
-   ```
-   (Sans ça, tu recevrais un lien au lieu d'un code ; sur iPhone, le lien s'ouvrirait dans Safari et pas dans l'appli installée.)
-5. **Project Settings › API** : note deux valeurs
+4. **Project Settings › API** : note deux valeurs
    - *Project URL*
    - *anon public* key
 
@@ -43,7 +37,7 @@ Mets ce dossier dans un dépôt **privé** (sur github.com : *New repository* �
 ## 4. Sur l'iPhone
 
 1. Ouvre l'adresse dans **Safari** › bouton **Partager** › **Sur l'écran d'accueil**.
-2. Ouvre l'appli depuis l'écran d'accueil, entre ton e-mail, puis le code reçu.
+2. Ouvre l'appli depuis l'écran d'accueil › *Créer mon compte* (e-mail + mot de passe) › appuie sur le lien de confirmation reçu par e-mail › reviens dans l'appli et connecte-toi.
    Au premier passage, l'appli reprend automatiquement tes données actuelles (chapitres, dates, semaine en cours) si l'e-mail correspond à `NEXT_PUBLIC_SEED_EMAIL`.
 3. **Calendrier** : bouton **📅 Calendrier** dans l'appli › *Ajouter à mon calendrier*.
    Le jour en cours est fixe ; les jours suivants sont marqués « (prévu) ». L'iPhone se met à jour tout seul (en général toutes les heures ; réglable dans *Réglages › Calendrier › Comptes › Récupérer les données*).

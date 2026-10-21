@@ -28,51 +28,54 @@ function Notice({ title, children }) {
   );
 }
 
-/* Connexion par code à 6 chiffres reçu par e-mail : fonctionne aussi dans l'appli installée sur l'iPhone,
-   où un lien magique s'ouvrirait dans Safari au lieu de l'appli. */
+/* Connexion par e-mail + mot de passe : fonctionne aussi dans l'appli installée sur l'iPhone. */
 function Login() {
+  const [mode, setMode] = useState("login");
   const [email, setEmail] = useState("");
-  const [code, setCode] = useState("");
-  const [step, setStep] = useState("email");
+  const [pwd, setPwd] = useState("");
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
 
-  async function sendCode(e) {
+  async function submit(e) {
     e.preventDefault(); setBusy(true); setMsg("");
-    const { error } = await supabase.auth.signInWithOtp({ email: email.trim(), options: { shouldCreateUser: true } });
-    setBusy(false);
-    if (error) setMsg("Envoi impossible : " + error.message);
-    else { setStep("code"); setMsg("Code envoyé. Regarde tes e-mails (et les spams)."); }
-  }
-  async function verify(e) {
-    e.preventDefault(); setBusy(true); setMsg("");
-    const { error } = await supabase.auth.verifyOtp({ email: email.trim(), token: code.trim(), type: "email" });
-    setBusy(false);
-    if (error) setMsg("Code incorrect ou expiré. Redemande un code.");
+    if (mode === "signup") {
+      const { data, error } = await supabase.auth.signUp({ email: email.trim(), password: pwd, options: { emailRedirectTo: window.location.origin } });
+      setBusy(false);
+      if (error) return setMsg(traduire(error.message));
+      if (!data.session) { setMode("login"); setMsg("Compte créé. Ouvre l'e-mail de Supabase et appuie sur le lien de confirmation (même s'il affiche une page d'erreur, c'est bon), puis reviens ici et connecte-toi."); }
+    } else {
+      const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password: pwd });
+      setBusy(false);
+      if (error) setMsg(traduire(error.message));
+    }
   }
 
   return (
     <div className="wrap" style={{ paddingTop: 40, maxWidth: 440 }}>
       <section className="panel">
         <h1>Mon plan de révision</h1>
-        {step === "email" ? (
-          <form onSubmit={sendCode} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <label htmlFor="email" className="muted">Ton e-mail : tu reçois un code de connexion.</label>
-            <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="prenom@exemple.fr" />
-            <button className="btn primary" disabled={busy}>{busy ? "Envoi…" : "Recevoir mon code"}</button>
-          </form>
-        ) : (
-          <form onSubmit={verify} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <label htmlFor="code" className="muted">Code reçu à {email}</label>
-            <input id="code" inputMode="numeric" autoComplete="one-time-code" required value={code} onChange={(e) => setCode(e.target.value)} placeholder="123456" style={{ fontSize: "1.4rem", letterSpacing: ".3em", textAlign: "center" }} />
-            <button className="btn primary" disabled={busy}>{busy ? "Vérification…" : "Me connecter"}</button>
-            <button type="button" className="btn ghost" onClick={() => { setStep("email"); setCode(""); }}>Changer d'e-mail</button>
-          </form>
-        )}
+        <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <label htmlFor="email" className="muted">E-mail</label>
+          <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="prenom@exemple.fr" />
+          <label htmlFor="pwd" className="muted">Mot de passe {mode === "signup" ? "(6 caractères minimum)" : ""}</label>
+          <input id="pwd" type="password" required minLength={6} autoComplete={mode === "signup" ? "new-password" : "current-password"} value={pwd} onChange={(e) => setPwd(e.target.value)} />
+          <button className="btn primary" disabled={busy}>{busy ? "Un instant…" : mode === "signup" ? "Créer mon compte" : "Me connecter"}</button>
+          <button type="button" className="btn ghost" onClick={() => { setMode(mode === "signup" ? "login" : "signup"); setMsg(""); }}>
+            {mode === "signup" ? "J'ai déjà un compte" : "Première fois ? Créer mon compte"}
+          </button>
+        </form>
         {msg ? <p className="muted" style={{ fontSize: ".9rem" }}>{msg}</p> : null}
       </section>
     </div>
   );
+}
+
+function traduire(m) {
+  if (/Invalid login credentials/i.test(m)) return "E-mail ou mot de passe incorrect.";
+  if (/Email not confirmed/i.test(m)) return "Confirme d'abord ton compte avec le lien reçu par e-mail.";
+  if (/already registered/i.test(m)) return "Ce compte existe déjà : connecte-toi.";
+  if (/at least 6/i.test(m)) return "Le mot de passe doit faire au moins 6 caractères.";
+  return m;
 }
 
 function AppShell({ user }) {
