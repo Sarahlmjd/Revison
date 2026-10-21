@@ -1,0 +1,924 @@
+{
+ "v": 1,
+ "step": 0,
+ "subjects": [
+  {
+   "id": "p5nm4a9",
+   "name": "Psychologie cognitive",
+   "diff": "g",
+   "coef": 5,
+   "manual": null,
+   "exam": false,
+   "master": true
+  },
+  {
+   "id": "2sr2k7u",
+   "name": "Psychologie du développement",
+   "diff": "g",
+   "coef": 5,
+   "manual": null,
+   "exam": false,
+   "master": true
+  },
+  {
+   "id": "v7bujfw",
+   "name": "Psychologie sociale",
+   "diff": "r",
+   "coef": 5,
+   "manual": null,
+   "exam": false,
+   "master": false
+  },
+  {
+   "id": "39womm4",
+   "name": "Psychopathologie",
+   "diff": "y",
+   "coef": 5,
+   "manual": null,
+   "exam": false,
+   "master": false
+  },
+  {
+   "id": "tn4wiv2",
+   "name": "Statistiques",
+   "diff": "y",
+   "coef": 2.3,
+   "manual": null,
+   "exam": false,
+   "master": true
+  },
+  {
+   "id": "2k4cj4o",
+   "name": "Méthodologie",
+   "diff": "y",
+   "coef": 2.3,
+   "manual": null,
+   "exam": false,
+   "master": true
+  },
+  {
+   "id": "jys3ygz",
+   "name": "Neurosciences fonctionnelles",
+   "diff": "y",
+   "coef": 2.3,
+   "manual": null,
+   "exam": false,
+   "master": true
+  },
+  {
+   "id": "urc0o0a",
+   "name": "Connaissance de la pratique",
+   "diff": "g",
+   "coef": 3,
+   "manual": null,
+   "exam": false,
+   "master": false
+  }
+ ],
+ "listed": {
+  "princ": true,
+  "sec": true,
+  "sans": true
+ },
+ "chapters": [
+  {
+   "id": "n1",
+   "subjId": "jys3ygz",
+   "name": "TD1 · Système vestibulaire",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch1",
+   "subjId": "jys3ygz",
+   "name": "Motricité 1",
+   "status": "maitrise",
+   "last": "2026-10-19",
+   "next": "2026-11-02",
+   "revs": 8,
+   "hist": [
+    "2026-09-24",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-14",
+    "2026-10-16",
+    "2026-10-19"
+   ]
+  },
+  {
+   "id": "ch2",
+   "subjId": "jys3ygz",
+   "name": "Motricité 2 · contrôle des motoneurones",
+   "status": "decouverte",
+   "last": "2026-10-21",
+   "next": "2026-10-22",
+   "revs": 3,
+   "hist": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
+   ]
+  },
+  {
+   "id": "n2",
+   "subjId": "jys3ygz",
+   "name": "Vision",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n3",
+   "subjId": "jys3ygz",
+   "name": "Olfaction et gustation",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n4",
+   "subjId": "jys3ygz",
+   "name": "Audition",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch4",
+   "subjId": "2sr2k7u",
+   "name": "Développement cognitif",
+   "status": "arevoir",
+   "last": "2026-10-21",
+   "next": "2026-10-23",
+   "revs": 3,
+   "hist": [
+    "2026-09-29",
+    "2026-10-07",
+    "2026-10-21"
+   ]
+  },
+  {
+   "id": "ch5",
+   "subjId": "2sr2k7u",
+   "name": "Petite enfance 1/4 · approche socio-écologique",
+   "status": "apprentissage",
+   "last": "2026-10-08",
+   "next": "2026-10-13",
+   "revs": 1,
+   "hist": [
+    "2026-10-08"
+   ]
+  },
+  {
+   "id": "ch6",
+   "subjId": "2sr2k7u",
+   "name": "Petite enfance 2/4 · politiques et développement",
+   "status": "arevoir",
+   "last": "2026-10-20",
+   "next": "2026-10-22",
+   "revs": 2,
+   "hist": [
+    "2026-10-15",
+    "2026-10-20"
+   ]
+  },
+  {
+   "id": "n5",
+   "subjId": "2sr2k7u",
+   "name": "Petite enfance 3/4 · du microsystème aux affordances",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n6",
+   "subjId": "2sr2k7u",
+   "name": "Production du langage",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch7",
+   "subjId": "p5nm4a9",
+   "name": "Introduction du langage",
+   "status": "arevoir",
+   "last": "2026-10-19",
+   "next": "2026-10-21",
+   "revs": 3,
+   "hist": [
+    "2026-10-07",
+    "2026-10-09",
+    "2026-10-19"
+   ]
+  },
+  {
+   "id": "ch9",
+   "subjId": "p5nm4a9",
+   "name": "Production et perception de la parole",
+   "status": "arevoir",
+   "last": "2026-10-20",
+   "next": "2026-10-22",
+   "revs": 2,
+   "hist": [
+    "2026-10-19",
+    "2026-10-20"
+   ]
+  },
+  {
+   "id": "n7",
+   "subjId": "p5nm4a9",
+   "name": "Reconnaissance des mots et compréhension",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n8",
+   "subjId": "p5nm4a9",
+   "name": "TD1 · Multilinguisme",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch10",
+   "subjId": "v7bujfw",
+   "name": "Changer les comportements",
+   "status": "arevoir",
+   "last": "2026-10-21",
+   "next": "2026-10-23",
+   "revs": 3,
+   "hist": [
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-21"
+   ]
+  },
+  {
+   "id": "n9",
+   "subjId": "v7bujfw",
+   "name": "Attribution · Séminaire 1 : comment les chercheurs expliquent",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n10",
+   "subjId": "v7bujfw",
+   "name": "Attribution · Séminaire 2 : expliquons-nous correctement ?",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n11",
+   "subjId": "v7bujfw",
+   "name": "Attribution · Séminaire 3 : comportements intentionnels",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n12",
+   "subjId": "v7bujfw",
+   "name": "Attribution · Séminaire 4-1 : conséquences sur émotions et comportements",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n13",
+   "subjId": "v7bujfw",
+   "name": "Attribution · Séminaire 4-2 : ce qui arrive à autrui",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n14",
+   "subjId": "v7bujfw",
+   "name": "Communications sociales",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch16",
+   "subjId": "39womm4",
+   "name": "Systémique · Ch.1 Fondements des approches familiales",
+   "status": "apprentissage",
+   "last": "2026-09-23",
+   "next": "2026-09-28",
+   "revs": 1,
+   "hist": [
+    "2026-09-23"
+   ]
+  },
+  {
+   "id": "n15",
+   "subjId": "39womm4",
+   "name": "Systémique · Ch.2 Cibles des interventions",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n16",
+   "subjId": "39womm4",
+   "name": "Systémique · Ch.3 États dépressifs",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n17",
+   "subjId": "39womm4",
+   "name": "Systémique · Ch.4 Interventions en thérapie familiale",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch17",
+   "subjId": "39womm4",
+   "name": "TCC · Ch.1 Mécanismes comportementaux de la dépression",
+   "status": "arevoir",
+   "last": "2026-10-19",
+   "next": "2026-10-21",
+   "revs": 1,
+   "hist": [
+    "2026-10-19"
+   ]
+  },
+  {
+   "id": "n18",
+   "subjId": "39womm4",
+   "name": "TCC · Ch.3 La vague émotionnelle",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch13",
+   "subjId": "2k4cj4o",
+   "name": "CM1 · Démarche expérimentale",
+   "status": "apprentissage",
+   "last": "2026-10-16",
+   "next": "2026-10-21",
+   "revs": 1,
+   "hist": [
+    "2026-10-16"
+   ]
+  },
+  {
+   "id": "n19",
+   "subjId": "2k4cj4o",
+   "name": "CM2 · Éléments fondamentaux et plan de recherche",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n20",
+   "subjId": "2k4cj4o",
+   "name": "CM3 · Plans particuliers, mesure, procédure, analyse",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n21",
+   "subjId": "2k4cj4o",
+   "name": "CM4 · Plans quasi-expérimentaux et recherche clinique",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n22",
+   "subjId": "2k4cj4o",
+   "name": "CM5 · Précisions sur les interactions",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "ch19",
+   "subjId": "tn4wiv2",
+   "name": "CM/TD 1",
+   "status": "arevoir",
+   "last": "2026-09-28",
+   "next": "2026-09-30",
+   "revs": 1,
+   "hist": [
+    "2026-09-28"
+   ]
+  },
+  {
+   "id": "ch20",
+   "subjId": "tn4wiv2",
+   "name": "CM/TD 2",
+   "status": "apprentissage",
+   "last": "2026-10-21",
+   "next": "2026-10-26",
+   "revs": 4,
+   "hist": [
+    "2026-10-04",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-21"
+   ]
+  },
+  {
+   "id": "n23",
+   "subjId": "tn4wiv2",
+   "name": "CM/TD 3",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n24",
+   "subjId": "tn4wiv2",
+   "name": "CM/TD 4",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  },
+  {
+   "id": "n25",
+   "subjId": "tn4wiv2",
+   "name": "CM5 (questions de cours)",
+   "status": "pas",
+   "last": null,
+   "next": null,
+   "revs": 0,
+   "hist": []
+  }
+ ],
+ "constraints": [
+  {
+   "id": "c1",
+   "day": 0,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c2",
+   "day": 1,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c3",
+   "day": 2,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c4",
+   "day": 3,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c5",
+   "day": 4,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c6",
+   "day": 5,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c7",
+   "day": 6,
+   "type": "obligation",
+   "start": "18:00",
+   "end": "23:00",
+   "label": "Soirée libre"
+  },
+  {
+   "id": "c8",
+   "day": 0,
+   "type": "obligation",
+   "start": "18:15",
+   "end": "19:00",
+   "label": "Sport"
+  },
+  {
+   "id": "c9",
+   "day": 1,
+   "type": "obligation",
+   "start": "18:15",
+   "end": "19:00",
+   "label": "Sport"
+  },
+  {
+   "id": "c10",
+   "day": 3,
+   "type": "obligation",
+   "start": "18:15",
+   "end": "19:00",
+   "label": "Sport"
+  },
+  {
+   "id": "c11",
+   "day": 5,
+   "type": "obligation",
+   "start": "13:00",
+   "end": "18:00",
+   "label": "Famille (ou dim. matin)"
+  }
+ ],
+ "avail": [
+  240,
+  240,
+  240,
+  240,
+  240,
+  120,
+  120
+ ],
+ "availExample": false,
+ "examBoost": 120,
+ "plan": {
+  "createdAt": 1792564608983,
+  "weekStart": "2026-10-19",
+  "sessions": [
+   {
+    "id": "a9y6xb9",
+    "subjId": "jys3ygz",
+    "mins": 60,
+    "day": 0,
+    "status": "done",
+    "note": "",
+    "chapId": "ch1",
+    "logged": true
+   },
+   {
+    "id": "8ytveez",
+    "subjId": "jys3ygz",
+    "mins": 60,
+    "day": 0,
+    "status": "done",
+    "note": "",
+    "chapId": "ch2",
+    "logged": true
+   },
+   {
+    "id": "etltbzy",
+    "subjId": "p5nm4a9",
+    "mins": 60,
+    "day": 0,
+    "status": "done",
+    "note": "",
+    "chapId": "ch7",
+    "logged": true
+   },
+   {
+    "id": "nouijsd",
+    "subjId": "p5nm4a9",
+    "mins": 60,
+    "day": 0,
+    "status": "done",
+    "note": "",
+    "chapId": "ch9",
+    "logged": true
+   },
+   {
+    "id": "wmyag2j",
+    "subjId": "39womm4",
+    "mins": 60,
+    "day": 0,
+    "status": "done",
+    "note": "",
+    "chapId": "ch17",
+    "logged": true
+   },
+   {
+    "id": "su743an",
+    "subjId": "jys3ygz",
+    "mins": 60,
+    "day": 1,
+    "status": "done",
+    "note": "",
+    "chapId": "ch2",
+    "logged": true
+   },
+   {
+    "id": "an817es",
+    "subjId": "2sr2k7u",
+    "mins": 60,
+    "day": 1,
+    "status": "done",
+    "note": "",
+    "chapId": "ch6",
+    "logged": true
+   },
+   {
+    "id": "skqxnk9",
+    "subjId": "p5nm4a9",
+    "mins": 60,
+    "day": 1,
+    "status": "done",
+    "note": "",
+    "chapId": "ch9",
+    "logged": true
+   },
+   {
+    "id": "p2-ch10-10",
+    "subjId": "v7bujfw",
+    "chapId": "ch10",
+    "mins": 30,
+    "day": 2,
+    "status": "done",
+    "note": "",
+    "kind": "quick",
+    "blk": "b2-10",
+    "chapDone": "ch10"
+   },
+   {
+    "id": "p2-ch20-10",
+    "subjId": "tn4wiv2",
+    "chapId": "ch20",
+    "mins": 60,
+    "day": 2,
+    "status": "done",
+    "note": "",
+    "kind": "review",
+    "blk": "b2-10",
+    "chapDone": "ch20"
+   },
+   {
+    "id": "p2-ch2-10",
+    "subjId": "jys3ygz",
+    "chapId": "ch2",
+    "mins": 60,
+    "day": 2,
+    "status": "partial",
+    "note": "finir la découverte jusqu'a la boucle de renshaw",
+    "kind": "disc",
+    "blk": "b2-10",
+    "chapDone": "ch2"
+   },
+   {
+    "id": "p2-ch4-11",
+    "subjId": "2sr2k7u",
+    "chapId": "ch4",
+    "mins": 30,
+    "day": 2,
+    "status": "skipped",
+    "note": "fatigué",
+    "kind": "quick",
+    "blk": "b2-11",
+    "chapDone": "ch4"
+   },
+   {
+    "id": "p2-ch16-12",
+    "subjId": "39womm4",
+    "chapId": "ch16",
+    "mins": 60,
+    "day": 2,
+    "status": "skipped",
+    "note": "",
+    "kind": "relearn",
+    "blk": "b2-12"
+   },
+   {
+    "id": "p3-ch2-13",
+    "subjId": "jys3ygz",
+    "chapId": "ch2",
+    "mins": 60,
+    "day": 3,
+    "status": "todo",
+    "note": "",
+    "kind": "disc",
+    "blk": "b3-13"
+   },
+   {
+    "id": "p3-ch5-14",
+    "subjId": "2sr2k7u",
+    "chapId": "ch5",
+    "mins": 30,
+    "day": 3,
+    "status": "todo",
+    "note": "",
+    "kind": "quick",
+    "blk": "b3-14"
+   },
+   {
+    "id": "p3-ch13-15",
+    "subjId": "2k4cj4o",
+    "chapId": "ch13",
+    "mins": 30,
+    "day": 3,
+    "status": "todo",
+    "note": "",
+    "kind": "quick",
+    "blk": "b3-14"
+   },
+   {
+    "id": "p3-ch16-16",
+    "subjId": "39womm4",
+    "chapId": "ch16",
+    "mins": 60,
+    "day": 3,
+    "status": "todo",
+    "note": "",
+    "kind": "relearn",
+    "blk": "b3-16"
+   },
+   {
+    "id": "p3-ch7-17",
+    "subjId": "p5nm4a9",
+    "chapId": "ch7",
+    "mins": 60,
+    "day": 3,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b3-17"
+   },
+   {
+    "id": "p4-ch17-18",
+    "subjId": "39womm4",
+    "chapId": "ch17",
+    "mins": 60,
+    "day": 4,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b4-18"
+   },
+   {
+    "id": "p4-ch6-19",
+    "subjId": "2sr2k7u",
+    "chapId": "ch6",
+    "mins": 60,
+    "day": 4,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b4-19"
+   },
+   {
+    "id": "p4-ch9-20",
+    "subjId": "p5nm4a9",
+    "chapId": "ch9",
+    "mins": 60,
+    "day": 4,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b4-20"
+   },
+   {
+    "id": "p4-ch19-21",
+    "subjId": "tn4wiv2",
+    "chapId": "ch19",
+    "mins": 60,
+    "day": 4,
+    "status": "todo",
+    "note": "",
+    "kind": "relearn",
+    "blk": "b4-21"
+   },
+   {
+    "id": "p5-ch10-22",
+    "subjId": "v7bujfw",
+    "chapId": "ch10",
+    "mins": 60,
+    "day": 5,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b5-22"
+   },
+   {
+    "id": "p5-ch4-23",
+    "subjId": "2sr2k7u",
+    "chapId": "ch4",
+    "mins": 60,
+    "day": 5,
+    "status": "todo",
+    "note": "",
+    "kind": "review",
+    "blk": "b5-23"
+   },
+   {
+    "id": "p6-ch7-24",
+    "subjId": "p5nm4a9",
+    "chapId": "ch7",
+    "mins": 30,
+    "day": 6,
+    "status": "todo",
+    "note": "",
+    "kind": "quick",
+    "blk": "b6-24"
+   },
+   {
+    "id": "p6-ch2-25",
+    "subjId": "jys3ygz",
+    "chapId": "ch2",
+    "mins": 30,
+    "day": 6,
+    "status": "todo",
+    "note": "",
+    "kind": "quick",
+    "blk": "b6-24"
+   },
+   {
+    "id": "p6-n9-26",
+    "subjId": "v7bujfw",
+    "chapId": "n9",
+    "mins": 60,
+    "day": 6,
+    "status": "todo",
+    "note": "",
+    "kind": "new",
+    "blk": "b6-26"
+   }
+  ],
+  "lockedDay": "2026-10-21"
+ },
+ "timer": null,
+ "dayStart": "09:00",
+ "openCh": {
+  "p5nm4a9": true,
+  "2sr2k7u": false,
+  "v7bujfw": false,
+  "39womm4": false,
+  "tn4wiv2": false,
+  "2k4cj4o": false,
+  "jys3ygz": false,
+  "urc0o0a": false
+ }
+}
