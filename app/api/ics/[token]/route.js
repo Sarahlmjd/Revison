@@ -1,6 +1,6 @@
 // Flux calendrier (.ics) : l'iPhone s'y abonne et récupère les créneaux tout seul.
 import { createClient } from "@supabase/supabase-js";
-import { planWeek, dayLayout, addDays, todayIn, workOf, CST, KINDS } from "@/lib/planner";
+import { planWeek, forecastNextWeek, dayLayout, addDays, todayIn, workOf, CST, KINDS } from "@/lib/planner";
 
 export const dynamic = "force-dynamic";
 
@@ -36,20 +36,19 @@ export async function GET(_req, { params }) {
   const today = todayIn(TZ);
   planWeek(S, today, { lock: false }); // ne fige rien : seule l'appli fige la journée
   const ws = S.plan.weekStart;
-  const subj = (id) => S.subjects.find((s) => s.id === id);
-  const chap = (id) => S.chapters.find((c) => c.id === id);
   const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 
   const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//plan-revision//FR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
     "X-WR-CALNAME:Plan de révision", "X-WR-TIMEZONE:" + TZ, "REFRESH-INTERVAL;VALUE=DURATION:PT1H", "X-PUBLISHED-TTL:PT1H"];
 
-  for (let d = 0; d < 7; d++) {
-    const date = addDays(ws, d);
-    if (date < today) continue;
-    const firm = date === today || S.plan.lockedDay === date;
-    for (const { x, a, w } of dayLayout(S, d)) {
+  const emit = (W, d, firm) => {
+    const date = addDays(W.plan.weekStart, d);
+    const subjW = (id) => W.subjects.find((s) => s.id === id);
+    const chapW = (id) => W.chapters.find((c) => c.id === id);
+    for (const { x, a, w } of dayLayout(W, d)) {
       if (x.status === "skipped") continue;
-      const s = subj(x.subjId), c = x.chapId && chap(x.chapId);
+      const s = subjW(x.subjId), c = x.chapId && chapW(x.chapId);
+      if (!s) continue;
       const kind = x.kind && KINDS[x.kind] ? KINDS[x.kind] : "";
       const done = x.status === "done" ? "✓ " : "";
       const title = `${done}📖 ${s.name}${c ? " · " + c.name : ""}${firm ? "" : " (prévu)"}`;
@@ -57,7 +56,18 @@ export async function GET(_req, { params }) {
       lines.push("BEGIN:VEVENT", `UID:${date}-${x.id}@plan-revision`, `DTSTAMP:${stamp}`, `DTSTART:${icsTime(date, a)}`, `DTEND:${icsTime(date, w)}`,
         fold("SUMMARY:" + esc(title)), fold("DESCRIPTION:" + esc(desc)), "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc(s.name), "TRIGGER:PT0M", "END:VALARM", "END:VEVENT");
     }
+  };
+
+  // semaine en cours : aujourd'hui (figé) puis les jours suivants (prévus)
+  for (let d = 0; d < 7; d++) {
+    const date = addDays(ws, d);
+    if (date < today) continue;
+    emit(S, d, date === today || S.plan.lockedDay === date);
   }
+  // semaine suivante : toujours en prévision
+  const N = forecastNextWeek(S);
+  for (let d = 0; d < 7; d++) emit(N, d, false);
+
   lines.push("END:VCALENDAR");
   return new Response(lines.join("\r\n") + "\r\n", {
     headers: { "Content-Type": "text/calendar; charset=utf-8", "Cache-Control": "no-store", "Content-Disposition": 'inline; filename="plan-revision.ics"' },
