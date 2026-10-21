@@ -19,3 +19,17 @@ create policy "créer mon plan" on public.plans for insert with check (auth.uid(
 
 drop policy if exists "modifier mon plan" on public.plans;
 create policy "modifier mon plan" on public.plans for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- Flux calendrier : lecture d'un plan par son jeton secret, sans clé serveur.
+-- La fonction ne renvoie que l'état du plan dont le jeton correspond exactement.
+create or replace function public.plan_by_ics_token(t text)
+returns jsonb
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select state from public.plans where ics_token = t and length(t) >= 32 limit 1;
+$$;
+revoke all on function public.plan_by_ics_token(text) from public;
+grant execute on function public.plan_by_ics_token(text) to anon, authenticated;

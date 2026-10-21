@@ -18,10 +18,9 @@ Compte 20 minutes la première fois. De préférence sur un ordinateur.
    <p>{{ .Token }}</p>
    ```
    (Sans ça, tu recevrais un lien au lieu d'un code ; sur iPhone, le lien s'ouvrirait dans Safari et pas dans l'appli installée.)
-5. **Project Settings › API** : note trois valeurs
+5. **Project Settings › API** : note deux valeurs
    - *Project URL*
    - *anon public* key
-   - *service_role* key (secrète)
 
 ## 2. GitHub
 
@@ -36,7 +35,6 @@ Mets ce dossier dans un dépôt **privé** (sur github.com : *New repository* �
 |---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | la *Project URL* |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | la clé *anon public* |
-| `SUPABASE_SERVICE_ROLE_KEY` | la clé *service_role* |
 | `NEXT_PUBLIC_SEED_EMAIL` | ton adresse e-mail (pour récupérer tes données actuelles) |
 | `APP_TIMEZONE` | `Europe/Paris` |
 
@@ -66,5 +64,5 @@ En local : `npm install`, copie `.env.example` en `.env.local` et remplis-le, pu
 ## Sécurité
 
 - Chaque compte ne voit que ses propres données (règles *Row Level Security* dans `schema.sql`).
-- La clé *service_role* ne sert qu'au serveur (flux calendrier) : ne la mets jamais ailleurs que dans Vercel.
+- Le flux calendrier lit ton plan via une fonction SQL qui exige le jeton secret exact : aucune clé secrète n'est stockée dans l'appli.
 - Le lien calendrier contient un jeton secret : ne le partage pas.

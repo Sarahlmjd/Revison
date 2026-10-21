@@ -23,14 +23,15 @@ const fold = (line) => { const out = []; let s = line; while (Buffer.byteLength(
 
 export async function GET(_req, { params }) {
   const { token } = await params;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL, key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key || !/^[a-f0-9]{32,80}$/.test(token || "")) return new Response("Introuvable", { status: 404 });
 
+  // Lecture par jeton via une fonction SQL dédiée (voir supabase/schema.sql) : aucune clé secrète nécessaire.
   const db = createClient(url, key, { auth: { persistSession: false } });
-  const { data } = await db.from("plans").select("state").eq("ics_token", token).maybeSingle();
-  if (!data || !data.state) return new Response("Introuvable", { status: 404 });
+  const { data } = await db.rpc("plan_by_ics_token", { t: token });
+  if (!data) return new Response("Introuvable", { status: 404 });
 
-  const S = structuredClone(data.state);
+  const S = structuredClone(data);
   S.chapters = S.chapters || [];
   const today = todayIn(TZ);
   planWeek(S, today, { lock: false }); // ne fige rien : seule l'appli fige la journée
