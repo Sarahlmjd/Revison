@@ -92,7 +92,7 @@ function AppShell({ user }) {
       try {
         const row = await loadOrCreatePlan(user, seed);
         const icsUrl = `${window.location.origin}/api/ics/${row.ics_token}`;
-        startApp({ initial: row.state, store: makeStore(user), icsUrl });
+        startApp({ initial: row.state, store: makeStore(user), icsUrl, onSignOut: () => supabase.auth.signOut().then(() => location.reload()) });
       } catch (e) {
         setError(e.message || String(e));
       }
@@ -101,27 +101,18 @@ function AppShell({ user }) {
 
   return (
     <>
-      <div className="wrap">
-        <div id="timer" className="timerbar" hidden></div>
-        <header className="top">
-          <div>
-            <h1>Mon plan de révision</h1>
-            <p className="sub muted">L2 psycho · Semestre 3 · <span id="saveState" className="save">chargement…</span></p>
-          </div>
-          <div className="budget" aria-live="polite">
-            <div className="budget-row"><span>Réparti cette semaine</span><span className="mono" id="budgetTxt">–</span></div>
-            <div className="bar"><i id="budgetBar" style={{ width: 0 }}></i></div>
-            <div className="row-actions" style={{ justifyContent: "flex-end" }}>
-              <button className="btn small" id="calBtn" type="button">📅 Calendrier</button>
-              <button className="btn small ghost" type="button" onClick={() => supabase.auth.signOut().then(() => location.reload())}>Se déconnecter</button>
-            </div>
-          </div>
+      <div className="wrap app">
+        <header className="appbar">
+          <h1>Mon plan de révision</h1>
+          <span id="saveState" className="save muted">chargement…</span>
         </header>
         {error ? <div className="warn">Impossible de charger tes données : {error}</div> : null}
-        <nav className="steps" id="steps" aria-label="Étapes"></nav>
-        <main id="main"></main>
+        <main id="main"><div className="skeleton" aria-hidden="true"><i></i><i></i><i></i></div></main>
       </div>
+      <nav id="tabs" className="tabs" aria-label="Navigation"></nav>
+      <div id="timer" hidden></div>
       <div id="modal" className="modal" hidden></div>
     </>
   );
 }
+
