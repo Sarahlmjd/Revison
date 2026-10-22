@@ -628,3 +628,17 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 .sw{width:44px;height:26px;border-radius:99px;background:var(--sunk);position:relative;flex:none;transition:background .2s}
 .sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--muted);transition:transform .2s,background .2s}
 .sw.on{background:var(--lav)} .sw.on i{transform:translateX(18px);background:#141012}
+
+/* fermer une fenêtre */
+.sheet{position:relative}
+.sheet-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;z-index:2}
+.sheet>h2,.sheet>.kicker{padding-right:44px}
+/* minuteur : quitter / pause */
+.focus-top{gap:10px}
+.focus-top .kicker{flex:1;text-align:center}
+.focus-acts{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;width:100%;margin-top:10px}
+.focus-acts .btn{margin-top:0!important}
+.focus-acts .btn:not(.primary){background:var(--surface);border:1.5px solid var(--line);color:var(--ink);font-family:var(--f-display);font-weight:800}
+.clock.blink{animation:blink 1.2s steps(2,end) infinite}
+@keyframes blink{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.clock.blink{animation:none;opacity:.6}}
