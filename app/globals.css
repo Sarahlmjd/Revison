@@ -648,3 +648,4 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 .copyrow{display:flex;gap:6px;align-items:center;margin-top:6px}
 .copyrow code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:var(--sunk);border-radius:10px;padding:8px 10px;font-size:.8rem}
 #music .mu-t{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.quest-tip{margin:0;font-size:.86rem;color:var(--cream)}

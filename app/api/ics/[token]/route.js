@@ -1,6 +1,6 @@
 // Flux calendrier (.ics) : l'iPhone s'y abonne et récupère les créneaux tout seul.
 import { createClient } from "@supabase/supabase-js";
-import { planWeek, forecastNextWeek, dayLayout, addDays, todayIn, workOf, CST, KINDS } from "@/lib/planner";
+import { planWeek, forecastNextWeek, dayLayout, addDays, todayIn, workOf, CST, KINDS, subjOf } from "@/lib/planner";
 
 export const dynamic = "force-dynamic";
 
@@ -43,7 +43,7 @@ export async function GET(_req, { params }) {
 
   const emit = (W, d, firm) => {
     const date = addDays(W.plan.weekStart, d);
-    const subjW = (id) => W.subjects.find((s) => s.id === id);
+    const subjW = (id) => subjOf(W, id);
     const chapW = (id) => W.chapters.find((c) => c.id === id);
     for (const { x, a, w } of dayLayout(W, d)) {
       if (x.status === "skipped" || x.status === "off") continue;
