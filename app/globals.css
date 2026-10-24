@@ -733,3 +733,32 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .gh-ic{flex:0 0 48px;height:48px;border-radius:14px 14px 14px 4px;display:flex;align-items:center;justify-content:center;gap:2px;font-family:var(--f-display);font-weight:900;font-size:1rem;color:#141012}
 .gh-ic svg{width:16px;height:16px}
 .gh-ic.xp{background:var(--rose)}.gh-ic.lv{background:var(--lav)}.gh-ic.st{background:var(--cream)}.gh-ic.bo{background:var(--sunk);color:var(--rose);border:1.5px solid var(--rose)}
+
+/* ---------- couleurs : matières (pastilles) et étapes (progression rouge → vert) ---------- */
+:root{--sg-dec:#F29B9B;--sg-dec-d:#9A5C5C;--sg-rev:#F5BE85;--sg-rev-d:#9C7650;--sg-app:#EBDD8E;--sg-app-d:#958B55;--sg-mai:#93D9B5;--sg-mai-d:#5A8C72}
+.sdot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--sc);margin-right:.4em;vertical-align:.08em;flex:none;box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.quest{border-color:var(--sc,var(--rose));box-shadow:6px 6px 0 color-mix(in srgb,var(--sc,var(--rose)) 32%,#141012)}
+.chip.on{background:var(--sc,var(--cream));border-color:var(--sc,var(--cream));box-shadow:0 3px 0 color-mix(in srgb,var(--sc,var(--cream)) 55%,#141012)}
+.chip.on .sdot{box-shadow:0 0 0 2px #141012}
+.qtime{color:#141012}
+/* étapes */
+.mnode.st-decouverte{background:var(--sg-dec);box-shadow:4px 4px 0 var(--sg-dec-d)}
+.mnode.st-arevoir{background:var(--sg-rev);box-shadow:4px 4px 0 var(--sg-rev-d)}
+.mnode.st-apprentissage{background:var(--sg-app);box-shadow:4px 4px 0 var(--sg-app-d)}
+.mnode.st-maitrise{background:var(--sg-mai);box-shadow:4px 4px 0 var(--sg-mai-d)}
+.al.st-decouverte{background:color-mix(in srgb,var(--sg-dec) 20%,transparent);color:var(--sg-dec)}
+.al.st-arevoir{background:color-mix(in srgb,var(--sg-rev) 20%,transparent);color:var(--sg-rev)}
+.al.st-apprentissage{background:color-mix(in srgb,var(--sg-app) 20%,transparent);color:var(--sg-app)}
+.al.st-maitrise{background:color-mix(in srgb,var(--sg-mai) 20%,transparent);color:var(--sg-mai)}
+.sg-decouverte{background:var(--sg-dec)}.sg-arevoir{background:var(--sg-rev)}.sg-apprentissage{background:var(--sg-app)}.sg-maitrise{background:var(--sg-mai)}
+.lvbar.st-decouverte i.on{background:var(--sg-dec)}.lvbar.st-arevoir i.on{background:var(--sg-rev)}.lvbar.st-apprentissage i.on{background:var(--sg-app)}.lvbar.st-maitrise i.on{background:var(--sg-mai)}
+.opt[data-cst]{border-left:5px solid var(--line)}
+.opt[data-cst="decouverte"]{border-left-color:var(--sg-dec)}.opt[data-cst="arevoir"]{border-left-color:var(--sg-rev)}.opt[data-cst="apprentissage"]{border-left-color:var(--sg-app)}.opt[data-cst="maitrise"]{border-left-color:var(--sg-mai)}
+.opt.on[data-cst="decouverte"]{background:var(--sg-dec);border-color:var(--sg-dec);box-shadow:3px 3px 0 var(--sg-dec-d)}
+.opt.on[data-cst="arevoir"]{background:var(--sg-rev);border-color:var(--sg-rev);box-shadow:3px 3px 0 var(--sg-rev-d)}
+.opt.on[data-cst="apprentissage"]{background:var(--sg-app);border-color:var(--sg-app);box-shadow:3px 3px 0 var(--sg-app-d)}
+.opt.on[data-cst="maitrise"]{background:var(--sg-mai);border-color:var(--sg-mai);box-shadow:3px 3px 0 var(--sg-mai-d)}
+.opt.on[data-cst] span{color:#2B2226}
+.stleg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.75rem;color:var(--muted);margin:2px 0 4px}
+.stleg span{display:inline-flex;align-items:center;gap:6px}
+.stleg i{width:10px;height:10px;border-radius:3px}
