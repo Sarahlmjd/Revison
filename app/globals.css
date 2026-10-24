@@ -720,3 +720,16 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 .gpause{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 12px;margin:4px 0;border:1.5px dashed var(--cream-d);border-radius:14px;color:var(--cream);text-align:center}
 .gpause span{font-weight:700;font-size:.92rem}
 .gpause small{color:var(--muted);font-size:.8rem}
+
+/* ---------- HUD cliquable + règles du jeu ---------- */
+button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-align:left;cursor:pointer}
+.hud .xp-t span:first-child{color:var(--ink)}
+.streak small{font-size:.7rem;color:var(--muted);font-weight:700;margin-left:-2px}
+.hud-i{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:.72rem;font-weight:800;color:var(--muted)}
+.boss-s b{color:var(--ink)}
+.gh-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.gh-row p{margin:2px 0 0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.gh-row p b{color:var(--ink)}
+.gh-ic{flex:0 0 48px;height:48px;border-radius:14px 14px 14px 4px;display:flex;align-items:center;justify-content:center;gap:2px;font-family:var(--f-display);font-weight:900;font-size:1rem;color:#141012}
+.gh-ic svg{width:16px;height:16px}
+.gh-ic.xp{background:var(--rose)}.gh-ic.lv{background:var(--lav)}.gh-ic.st{background:var(--cream)}.gh-ic.bo{background:var(--sunk);color:var(--rose);border:1.5px solid var(--rose)}
