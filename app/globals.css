@@ -698,3 +698,25 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 @media (max-width:620px){.rv-keys{display:none}}
 .rv-done{flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;max-width:520px;width:100%;margin:0 auto}
 .tab{font-size:.68rem}
+
+/* ---------- rituel avant de jouer ---------- */
+.ritual{gap:12px}
+.rt-step{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--sunk);border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--ink)}
+.rt-step>span:nth-child(2),.rt-step label{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.rt-step small{color:var(--muted);font-size:.82rem;line-height:1.35}
+.rt-step input{margin-top:6px;width:100%}
+.rt-n{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);font-weight:700;font-size:.85rem}
+.rt-ok{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);color:transparent;font-weight:800}
+.rt-step.on,.rt-step .rt-ok.on{border-color:var(--lav)}
+.rt-step.on .rt-ok,.rt-ok.on{background:var(--lav);border-color:var(--lav);color:var(--bg)}
+.rt-step.breathing{justify-content:space-between}
+.breath{flex:0 0 56px;height:56px;border-radius:50%;background:radial-gradient(circle,var(--rose) 0%,var(--lav-d) 70%);animation:breathe 10s ease-in-out infinite;transform:scale(.55)}
+@keyframes breathe{0%{transform:scale(.55)}40%{transform:scale(1)}100%{transform:scale(.55)}}
+@media (prefers-reduced-motion:reduce){.breath{animation:none;transform:scale(.8)}}
+.breath-t{flex:1;display:flex;flex-direction:column}
+.breath-t b{font-size:1.15rem}
+.breath-t small{color:var(--muted)}
+.focus-goal{margin:6px auto 0;max-width:30ch;padding:6px 12px;border-radius:99px;background:rgba(185,166,232,.14);color:var(--lav);font-size:.9rem;text-align:center}
+.gpause{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 12px;margin:4px 0;border:1.5px dashed var(--cream-d);border-radius:14px;color:var(--cream);text-align:center}
+.gpause span{font-weight:700;font-size:.92rem}
+.gpause small{color:var(--muted);font-size:.8rem}
