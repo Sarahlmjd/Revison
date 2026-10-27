@@ -762,3 +762,8 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .stleg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.75rem;color:var(--muted);margin:2px 0 4px}
 .stleg span{display:inline-flex;align-items:center;gap:6px}
 .stleg i{width:10px;height:10px;border-radius:3px}
+.rv-subjdone{gap:14px}
+.rv-next{display:flex;flex-direction:column;gap:2px;width:100%;padding:14px 16px;border-radius:18px 18px 18px 4px;background:var(--surface);border:2px solid var(--sc);text-align:left}
+.rv-next small{font-size:.7rem;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.rv-next b{font-family:var(--f-display);font-size:1.15rem}
+.rv-next span{color:var(--muted);font-size:.85rem}
