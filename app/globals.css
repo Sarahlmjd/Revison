@@ -389,7 +389,7 @@ input,select,textarea{background:var(--sunk)!important;border-color:var(--line)!
 /* liste des quêtes */
 .qrows{display:flex;flex-direction:column;gap:9px}
 .qrow{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:6px 6px 6px 6px}
-.qrows .qrow:nth-child(odd){transform:rotate(.6deg)} .qrows .qrow:nth-child(even){transform:rotate(-.6deg)}
+/* lignes de quêtes bien droites */
 .qtime{flex:none;border-radius:99px;padding:6px 10px;font-weight:700;font-size:.8rem;color:#141012}
 .t-rose{background:var(--rose)} .t-lav{background:var(--lav)} .t-cream{background:var(--cream)}
 .qmain{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
@@ -767,3 +767,7 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .rv-next small{font-size:.7rem;letter-spacing:.1em;color:var(--muted);font-weight:700}
 .rv-next b{font-family:var(--f-display);font-size:1.15rem}
 .rv-next span{color:var(--muted);font-size:.85rem}
+
+/* « QUÊTES DU JOUR » : on garde la pente, mais on le descend pour ne plus mordre sur la ligne de date au-dessus */
+.today > .mega{margin-top:30px;margin-bottom:26px;position:relative;z-index:0}
+.today > .kicker,.today > .late18{position:relative;z-index:1}
