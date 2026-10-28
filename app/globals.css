@@ -771,3 +771,6 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 /* « QUÊTES DU JOUR » : on garde la pente, mais on le descend pour ne plus mordre sur la ligne de date au-dessus */
 .today > .mega{margin-top:30px;margin-bottom:26px;position:relative;z-index:0}
 .today > .kicker,.today > .late18{position:relative;z-index:1}
+.endchap{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--muted)}
+.endchap select{width:100%;font-weight:700;color:var(--ink);padding:10px 12px;border-radius:12px}
+.endchap small{font-size:.78rem}
