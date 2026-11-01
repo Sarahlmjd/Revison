@@ -4,6 +4,9 @@ import { supabase, loadOrCreatePlan, makeStore } from "@/lib/supabase";
 import { startApp } from "@/lib/app";
 import seed from "@/seed/initial-state.json";
 
+/** Autres personnes autorisées à créer un compte (chacune a son propre plan, séparé). Garder en accord avec supabase/only-me.sql. */
+const EXTRA_USERS = ["wiame.lamjadab.pro@gmail.com"];
+
 export default function Page() {
   const [session, setSession] = useState(undefined);
 
@@ -40,7 +43,8 @@ function Login() {
     e.preventDefault(); setBusy(true); setMsg("");
     if (mode === "signup") {
       const owner = (process.env.NEXT_PUBLIC_SEED_EMAIL || "").trim().toLowerCase();
-      if (owner && email.trim().toLowerCase() !== owner) { setBusy(false); return setMsg("Les inscriptions sont fermées : cette appli est privée."); }
+      const allowed = [owner, ...EXTRA_USERS].filter(Boolean);
+      if (owner && !allowed.includes(email.trim().toLowerCase())) { setBusy(false); return setMsg("Les inscriptions sont fermées : cette appli est privée."); }
       const { data, error } = await supabase.auth.signUp({ email: email.trim(), password: pwd, options: { emailRedirectTo: window.location.origin } });
       setBusy(false);
       if (error) return setMsg(traduire(error.message));
@@ -93,7 +97,8 @@ function AppShell({ user }) {
       try {
         const row = await loadOrCreatePlan(user, seed);
         const icsUrl = `${window.location.origin}/api/ics/${row.ics_token}`;
-        startApp({ initial: row.state, initialAt: row.updated_at, store: makeStore(user), icsUrl, onSignOut: () => supabase.auth.signOut().then(() => location.reload()) });
+        const isOwner = (user.email || "").toLowerCase() === (process.env.NEXT_PUBLIC_SEED_EMAIL || "").trim().toLowerCase();
+        startApp({ initial: row.state, initialAt: row.updated_at, store: makeStore(user), icsUrl, isOwner, onSignOut: () => supabase.auth.signOut().then(() => location.reload()) });
       } catch (e) {
         setError(e.message || String(e));
       }

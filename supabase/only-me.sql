@@ -1,4 +1,4 @@
--- Réserve l'appli à une seule adresse : toute autre inscription est refusée par la base.
+-- Réserve l'appli aux adresses autorisées : toute autre inscription est refusée par la base.
 -- À coller dans Supabase > SQL Editor > New query, puis « Run ».
 create or replace function public.only_owner_signup()
 returns trigger
@@ -7,7 +7,7 @@ security definer
 set search_path = public
 as $$
 begin
-  if lower(new.email) <> 'lamjadabsarah@gmail.com' then
+  if lower(new.email) not in ('lamjadabsarah@gmail.com', 'wiame.lamjadab.pro@gmail.com') then
     raise exception 'Inscriptions fermées';
   end if;
   return new;
