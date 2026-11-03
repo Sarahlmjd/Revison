@@ -775,3 +775,25 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .endchap select{width:100%;font-weight:700;color:var(--ink);padding:10px 12px;border-radius:12px}
 .endchap small{font-size:.78rem}
 .qdur{font-weight:700;color:var(--ink)}
+
+/* ---------- cartes qui se retournent ---------- */
+.rv-prog{max-width:720px;width:100%;margin:10px auto 0;height:6px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.rv-prog i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--lav),var(--rose));transition:width .4s ease}
+.rv-combo{align-self:center;margin-top:8px;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;background:var(--surface);border:1.5px solid var(--cream-d);color:var(--cream);font-size:.82rem;font-weight:700}
+.rv-combo b{font-family:var(--f-display);font-size:1rem;color:var(--ink)}
+.rv-combo.pop{animation:pop .45s ease}
+.flip-wrap{flex:1;max-width:720px;width:100%;margin:14px auto;perspective:1400px;display:flex}
+.flip-wrap.enter{animation:cardIn .35s cubic-bezier(.2,.8,.3,1.2)}
+@keyframes cardIn{from{opacity:0;transform:translateX(40px) rotate(3deg)}to{opacity:1;transform:none}}
+.flip{position:relative;flex:1;min-height:260px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.3,.7,.3,1);cursor:pointer}
+.flip.flipped{transform:rotateY(180deg);cursor:default}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:2px solid var(--sc,var(--line));border-radius:26px 26px 26px 8px;padding:22px;display:flex;flex-direction:column;gap:14px;box-shadow:6px 6px 0 color-mix(in srgb,var(--sc,var(--line)) 30%,#141012);overflow:auto}
+.face.front{justify-content:center}
+.face.front .kicker{position:absolute;top:22px;left:22px;right:22px}
+.face.back{transform:rotateY(180deg);background:color-mix(in srgb,var(--sc,var(--surface)) 9%,var(--surface))}
+.rv-q.small{font-size:1rem;color:var(--muted);font-weight:700}
+.flip-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:.8rem;color:var(--muted)}
+.face .rv-edit{position:absolute;right:14px;bottom:12px}
+@media (prefers-reduced-motion:reduce){.flip{transition:none}.flip-wrap.enter,.rv-combo.pop{animation:none}}
+.face hr{border:0;border-top:1.5px dashed var(--line);margin:2px 0;width:100%;align-self:stretch}
+.face.back .rv-a{font-family:var(--f-display);font-weight:800;font-size:clamp(1.25rem,4.6vw,1.75rem);line-height:1.3;color:var(--ink)}
