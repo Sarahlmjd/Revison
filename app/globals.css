@@ -797,3 +797,10 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 @media (prefers-reduced-motion:reduce){.flip{transition:none}.flip-wrap.enter,.rv-combo.pop{animation:none}}
 .face hr{border:0;border-top:1.5px dashed var(--line);margin:2px 0;width:100%;align-self:stretch}
 .face.back .rv-a{font-family:var(--f-display);font-weight:800;font-size:clamp(1.25rem,4.6vw,1.75rem);line-height:1.3;color:var(--ink)}
+/* contour qui s'allume selon la réponse */
+.face.back{transition:border-color .2s ease,box-shadow .25s ease}
+.face.back.glow-good{border-color:var(--sg-mai);box-shadow:0 0 0 3px color-mix(in srgb,var(--sg-mai) 45%,transparent),0 0 28px color-mix(in srgb,var(--sg-mai) 40%,transparent)}
+.face.back.glow-hard{border-color:var(--sg-rev);box-shadow:0 0 0 3px color-mix(in srgb,var(--sg-rev) 45%,transparent),0 0 28px color-mix(in srgb,var(--sg-rev) 35%,transparent)}
+.face.back.glow-bad{border-color:var(--sg-dec);box-shadow:0 0 0 3px color-mix(in srgb,var(--sg-dec) 45%,transparent),0 0 28px color-mix(in srgb,var(--sg-dec) 35%,transparent)}
+.rv-b:disabled{opacity:.45}
+.rv-b.picked{opacity:1;transform:scale(.96)}
