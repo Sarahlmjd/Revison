@@ -804,3 +804,7 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .face.back.glow-bad{border-color:var(--sg-dec);box-shadow:0 0 0 3px color-mix(in srgb,var(--sg-dec) 45%,transparent),0 0 28px color-mix(in srgb,var(--sg-dec) 35%,transparent)}
 .rv-b:disabled{opacity:.45}
 .rv-b.picked{opacity:1;transform:scale(.96)}
+.rv-left{display:flex;flex-direction:column;align-items:center;line-height:1.1;text-align:center}
+.rv-left b{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--ink)}
+.rv-left span{font-size:.75rem;font-weight:700;color:var(--muted)}
+.rv-left small{font-size:.68rem;color:var(--muted);opacity:.8}
