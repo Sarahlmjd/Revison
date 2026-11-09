@@ -936,3 +936,4 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .stp-c{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:.8rem;color:var(--ink)}
 .stp-plus{border:1px solid var(--line);background:var(--sunk);color:var(--ink);border-radius:99px;padding:3px 10px;font:inherit;font-weight:700;cursor:pointer}
 .method li b{color:var(--ink)}
+.chr.held{opacity:.55}
