@@ -890,3 +890,34 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
   .chtable .ctab tr.tg th{padding:18px 4px 6px}
   .chtable .ctab tr.crow-t{padding:10px 4px;grid-template-columns:auto 1fr auto}
 }
+
+/* ---------- chapitres : cartes par matière (v3, épuré) ---------- */
+.chv h2{margin:4px 0 14px}
+.chv .t-vert{--tc:var(--sg-mai)}.chv .t-orange{--tc:var(--sg-rev)}.chv .t-rouge{--tc:var(--sg-dec)}.chv .t-gris{--tc:color-mix(in srgb,var(--muted) 35%,transparent)}
+.chv-tot,.sjc-bar{display:flex;gap:3px}
+.chv-tot{height:10px}
+.chv-tot i,.sjc-bar i{flex:1;border-radius:3px;background:var(--tc)}
+.chv-leg{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 22px;font-size:.8rem;color:var(--muted)}
+.chv-leg span{display:inline-flex;align-items:center;gap:6px}
+.chv-leg i{width:9px;height:9px;border-radius:50%;background:var(--tc)}
+.sjcs{display:flex;flex-direction:column;gap:10px}
+.sjc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:4px 14px 14px;position:relative;overflow:hidden}
+.sjc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--sc)}
+.sjc-h{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;padding:12px 0 10px;color:var(--ink);font:inherit;cursor:pointer;text-align:left}
+.sjc-n{flex:1;font-family:var(--f-display);font-size:1.02rem}
+.sjc-c{font-size:.8rem;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.sjc-chev{color:var(--muted);transition:transform .2s}
+.sjc.open .sjc-chev{transform:rotate(90deg)}
+.sjc-bar{height:6px}
+.sjc-list{margin-top:12px;display:flex;flex-direction:column}
+.chr{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;border-top:1px solid color-mix(in srgb,var(--line) 60%,transparent);padding:11px 2px;color:var(--ink);font:inherit;font-size:.9rem;text-align:left;cursor:pointer}
+.chr:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.chr-d{flex:none;width:10px;height:10px;border-radius:50%;background:var(--tc)}
+.chr.t-gris .chr-d{background:none;border:1.5px solid color-mix(in srgb,var(--muted) 60%,transparent)}
+.chr.t-gris .chr-n{color:var(--muted)}
+.chr-n{flex:1;min-width:0;overflow-wrap:anywhere}
+.chr-x{flex:none;font-size:.78rem;color:var(--muted);white-space:nowrap}
+.chr-x.now{color:var(--ink);font-weight:700}
+.sjc-list .chadd{display:flex;gap:8px;margin-top:10px}
+.sjc-list .chadd input{flex:1;min-width:0}
+.chv .how{margin-top:20px}
