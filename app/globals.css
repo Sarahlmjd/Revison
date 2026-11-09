@@ -871,3 +871,22 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 }
 @media (max-width:560px){ .ctab{min-width:0 !important;width:100% !important} }
 .ctab td.tc-vu{white-space:nowrap}
+
+/* tableau des chapitres : version épurée */
+.chtable .ctab{min-width:0;border:0;font-size:.9rem;margin-top:14px;table-layout:fixed}
+.chtable .ctab col.c2{width:110px}.chtable .ctab col.c3{width:90px}.chtable .ctab col.c4{width:150px}
+.chtable .ctab th,.chtable .ctab td{border:0;padding:10px 12px}
+.chtable .ctab thead th{background:none;border-bottom:1px solid var(--line);font-size:.7rem}
+.chtable .ctab tr.tg th{background:none;border:0;padding:22px 12px 6px}
+.tg-l{display:inline-flex;align-items:center;font-family:var(--f-display);font-size:1rem;color:var(--ink)}
+.tg-c{float:right;font-size:.75rem;color:var(--muted);font-weight:600;margin-top:3px}
+.chtable .crow-t td{border-top:1px solid color-mix(in srgb,var(--line) 55%,transparent)}
+.chtable .crow-t:hover td{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.chtable .crow-t td:first-child{border-radius:0}
+.chtable .tc-vu,.chtable .tc-next{color:var(--muted);font-size:.84rem}
+.chtable .crow-t.isnew .tlink{color:var(--muted);font-weight:600}
+@media (max-width:560px){
+  .chtable .ctab{table-layout:auto}
+  .chtable .ctab tr.tg th{padding:18px 4px 6px}
+  .chtable .ctab tr.crow-t{padding:10px 4px;grid-template-columns:auto 1fr auto}
+}
