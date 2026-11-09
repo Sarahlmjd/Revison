@@ -827,3 +827,47 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .rt-method summary{cursor:pointer;font-weight:700;font-size:.88rem;color:var(--lav)}
 .tadj{display:flex;gap:6px;justify-content:center;margin:6px 0 2px}
 .tadj button{min-width:40px;padding:4px 8px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;font-size:.78rem;cursor:pointer}
+
+/* ---------- chapitres en tableau, 3 couleurs ---------- */
+.chtable h2{margin:4px 0 10px}
+.trisum{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tri{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.tri.rouge{background:color-mix(in srgb,var(--sg-dec) 22%,transparent);color:var(--sg-dec)}
+.tri.orange{background:color-mix(in srgb,var(--sg-rev) 22%,transparent);color:var(--sg-rev)}
+.tri.vert{background:color-mix(in srgb,var(--sg-mai) 22%,transparent);color:var(--sg-mai)}
+.tri.gris{background:var(--sunk);color:var(--muted)}
+.tscroll{overflow-x:auto;margin-top:10px;border:1px solid var(--line);border-radius:16px}
+.ctab{width:100%;border-collapse:collapse;font-size:.88rem}
+.ctab th,.ctab td{padding:9px 10px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.ctab thead th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);position:sticky;top:0}
+.ctab tr.tg th{background:var(--sunk);font-family:var(--f-display);font-size:.92rem;text-transform:none;letter-spacing:0;color:var(--ink);border-left:4px solid var(--sc)}
+.ctab tr.tg th .muted{font-family:var(--f-body,inherit);font-size:.75rem;font-weight:600;margin-left:6px}
+.crow-t{cursor:pointer}
+.crow-t:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.tlink{background:none;border:0;padding:0;color:var(--ink);font:inherit;font-weight:700;text-align:left;cursor:pointer}
+.tday{font-size:.7rem;font-weight:700;color:var(--lav);margin-left:4px}
+.ctab td.late{color:var(--sg-dec);font-weight:700}
+.tadd td{border-bottom:0}
+@media (max-width:560px){.tc-opt{display:none}.ctab th,.ctab td{padding:8px 7px}.ctab{font-size:.82rem}}
+/* téléphone : chaque chapitre sur 2 lignes (nom, puis état · vu le · prochain) */
+@media (max-width:560px){
+  .tscroll{overflow:visible}
+  .ctab thead{display:none}
+  .ctab,.ctab tbody{display:block;width:100%}
+  .ctab tr.tg{display:block}.ctab tr.tg th{display:block}
+  .ctab tr.crow-t{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:4px 10px;padding:9px 10px;border-bottom:1px solid var(--line)}
+  .ctab tr.crow-t td{border:0;padding:0;font-size:.8rem}
+  .ctab td.tc-name{grid-column:1/-1;font-size:.88rem}
+  .ctab td.tc-vu::before,.ctab td.tc-next::before{content:attr(data-l);color:var(--muted);font-weight:400}
+  .ctab td.tc-next{justify-self:end;text-align:right}
+  .tadd{display:block}.tadd td{display:block}
+}
+@media (max-width:560px){
+  .chtable{min-width:0;max-width:100%;overflow:hidden}
+  .ctab tr.crow-t{width:100%;box-sizing:border-box;grid-template-columns:auto 1fr auto}
+  .ctab td.tc-name{min-width:0}
+  .tlink{white-space:normal;display:block;max-width:100%;overflow-wrap:anywhere}
+  .ctab tr.crow-t.isnew td.tc-vu,.ctab tr.crow-t.isnew td.tc-next{display:none}
+}
+@media (max-width:560px){ .ctab{min-width:0 !important;width:100% !important} }
+.ctab td.tc-vu{white-space:nowrap}
