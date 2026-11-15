@@ -937,3 +937,33 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .stp-plus{border:1px solid var(--line);background:var(--sunk);color:var(--ink);border-radius:99px;padding:3px 10px;font:inherit;font-weight:700;cursor:pointer}
 .method li b{color:var(--ink)}
 .chr.held{opacity:.55}
+
+/* ---------- QCM bilan ---------- */
+.qz-entry{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin:0 0 14px;display:flex;flex-direction:column;gap:4px}
+.qz-entry small{color:var(--muted);font-size:.8rem}
+.qz-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.qz-btns .btn{display:inline-flex;align-items:center;gap:8px}
+.qz-last{font-size:.75rem;color:var(--muted);font-weight:600}
+.qz .kicker{margin:0}
+.qz-top{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);font-weight:600}
+.qz-bar{height:6px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.qz-bar i{display:block;height:100%;background:var(--sg-mai);border-radius:99px;transition:width .25s}
+.qz-q{font-size:1.12rem;line-height:1.35;margin:4px 0 0}
+.qz-opts{display:flex;flex-direction:column;gap:8px}
+.qz-o{display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:12px;color:var(--ink);font:inherit;font-size:.92rem;cursor:pointer;line-height:1.35}
+.qz-o:hover:not(:disabled){border-color:var(--ink)}
+.qz-o:disabled{cursor:default}
+.qz-l{flex:none;width:24px;height:24px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font-size:.75rem;font-weight:800}
+.qz-o.ok{border-color:var(--sg-mai);background:color-mix(in srgb,var(--sg-mai) 18%,var(--surface))}
+.qz-o.ko{border-color:var(--sg-dec);background:color-mix(in srgb,var(--sg-dec) 18%,var(--surface))}
+.qz-o.dim{opacity:.5}
+.qz-x{margin:0;font-size:.88rem;line-height:1.45;padding:10px 12px;border-radius:12px;background:var(--sunk)}
+.qz-res{display:flex;flex-direction:column}
+.qz-r{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:.9rem}
+.qz-rn{flex:1;min-width:0}
+.qz-rp{font-weight:800;font-variant-numeric:tabular-nums}
+.qz-pill{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:99px;color:#1d1d1d}
+.qz-pill.st-maitrise{background:var(--sg-mai)}.qz-pill.st-apprentissage{background:var(--sg-rev)}.qz-pill.st-arevoir{background:var(--sg-dec)}
+.qz-errs summary{cursor:pointer;font-weight:700;padding:6px 0}
+.qz-errs p{font-size:.85rem;line-height:1.45;margin:10px 0}
+.qz-pill.few{background:var(--sunk);color:var(--muted)}
