@@ -967,3 +967,9 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .qz-errs summary{cursor:pointer;font-weight:700;padding:6px 0}
 .qz-errs p{font-size:.85rem;line-height:1.45;margin:10px 0}
 .qz-pill.few{background:var(--sunk);color:var(--muted)}
+
+/* ---------- version légère ---------- */
+.lightbtn{display:block;width:100%;margin-top:10px;background:none;border:1px dashed var(--line);border-radius:12px;padding:10px;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer}
+.lightbtn b{color:var(--ink)}
+.lightbtn:hover{border-color:var(--ink)}
+.lb-sub{display:block;font-size:.75rem;font-weight:500;opacity:.75;margin-top:2px}
