@@ -998,3 +998,10 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .px-y{color:var(--sg-dec);font-weight:700}
 .px-x{color:var(--muted)}
 .pc-opt{display:flex;flex-direction:column;align-items:center;gap:2px}
+
+/* ---------- QCM et partiel blanc : écran à part entière (rien derrière) ---------- */
+.modal.full{background:var(--bg);place-items:start center;padding:0;overflow:auto}
+.modal.full .sheet{background:var(--bg);border-radius:0;max-width:620px;min-height:100%;max-height:none;box-shadow:none;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(28px + env(safe-area-inset-bottom,0px));animation:none}
+.modal.full .grab{display:none}
+.modal.full .sheet-x{position:sticky;top:0;align-self:flex-end;z-index:2}
+.modal.full .sheet{border:0;outline:0}
