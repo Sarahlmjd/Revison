@@ -973,3 +973,27 @@ button.hud{width:100%;background:none;border:0;padding:0;color:inherit;text-alig
 .lightbtn b{color:var(--ink)}
 .lightbtn:hover{border-color:var(--ink)}
 .lb-sub{display:block;font-size:.75rem;font-weight:500;opacity:.75;margin-top:2px}
+
+/* ---------- partiel blanc ---------- */
+.px-entry{border-color:color-mix(in srgb,var(--sg-dec) 55%,var(--line))}
+.px-top{display:flex;justify-content:space-between;align-items:center}
+.px-clock{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.05rem;padding:4px 10px;border-radius:99px;background:var(--sunk)}
+.px-clock.low{background:var(--sg-dec);color:#1d1d1d}
+.px-stem{margin:4px 0 0;font-weight:700;line-height:1.4}
+.px-stem:empty{display:none}
+.px-prop{margin:0;line-height:1.45;font-size:.93rem;padding:10px 12px;border-radius:12px;background:var(--sunk)}
+.qz-o.sel{border-color:var(--ink);background:color-mix(in srgb,var(--ink) 10%,var(--surface));font-weight:700}
+.px-nav{display:flex;justify-content:space-between;gap:10px}
+.px-nav .btn{flex:1}
+.px-sub{align-self:center;font-size:.8rem}
+.px-h{margin:18px 0 4px}
+.px-corr{display:flex;flex-direction:column;gap:10px}
+.px-c{border:1px solid var(--line);border-left:4px solid var(--sg-mai);border-radius:12px;padding:10px 12px;font-size:.86rem;line-height:1.45}
+.px-c.ko{border-left-color:var(--sg-dec)}
+.px-c p{margin:4px 0}
+.px-n{font-weight:800}
+.px-src{font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--sunk);color:var(--muted)}
+.px-s{font-weight:600}
+.px-p em{font-style:normal;font-weight:800;margin-left:4px}
+.px-y{color:var(--sg-dec);font-weight:700}
+.px-x{color:var(--muted)}
